@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context=".Card"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/textdateSearchone"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:ems="10"
+            android:hint="תאריך"
+            android:inputType="date"
+            tools:layout_editor_absoluteY="31dp" />
+
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/textstartSearchone"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textdateSearchone"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:hint="נקודת מוצא"
+            android:inputType="textMultiLine"
+            app:layout_constraintTop_toBottomOf="@+id/textdateSearchone" />
+
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/textdestinationSearchone"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textstartSearchone"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+
+            android:hint="יעד"
+            android:inputType="textMultiLine"
+            app:layout_constraintTop_toBottomOf="@+id/textstartSearchone" />
+
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/textnameSearchone"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textdestinationSearchone"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:hint="שם"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/textnumberSearchone"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textnameSearchone"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:hint="טלפון"
+            android:inputType="number" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
