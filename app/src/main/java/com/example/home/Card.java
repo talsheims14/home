@@ -8,7 +8,7 @@ public class Card
     private String number;
 
 
-    public Card() {
+    public Card() {//check
     }
 
     public String getDestination() {
