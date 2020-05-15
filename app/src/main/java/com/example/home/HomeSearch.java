@@ -23,7 +23,7 @@ public class HomeSearch extends AppCompatActivity  {
    private RecyclerView recyclerView;
    private DatabaseReference databaseReference;
    private ArrayList<Card> cards;
-   private MyAdapter myAdapter;
+   private MyAdapter myAdapter;                       // fields
    private ProgressBar progressBar;
    private String start, destination, dateday,datemonth, tempname, tempnumber;
 
@@ -40,7 +40,7 @@ public class HomeSearch extends AppCompatActivity  {
             databaseReference= FirebaseDatabase.getInstance().getReference("ride");
             start=getIntent().getStringExtra("start").toString().trim();
             destination=getIntent().getStringExtra("destination").toString().trim();
-            dateday=getIntent().getStringExtra("dateday").toString().trim();
+            dateday=getIntent().getStringExtra("dateday").toString().trim();                         //Get infomormation about the details from the intent (previous )
             datemonth=getIntent().getStringExtra("datemonth").toString().trim();
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
 
@@ -48,20 +48,21 @@ public class HomeSearch extends AppCompatActivity  {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 Card c;
-                if (dataSnapshot.exists())
+                if (dataSnapshot.exists()) //Check if the details are exists
                 {
                   for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()) {
                           if (dataSnapshot1.child("dateday").getValue().equals(dateday) && dataSnapshot1.child("start").getValue().equals(start)
                                   &&dataSnapshot1.child("datemonth").getValue().equals(datemonth)&&dataSnapshot1.child("destination").getValue().equals(destination)) {
-                              c = new Card();
+                              //Check if The relevant details for the ride are equals to the search details
+                              c = new Card();      //create a card
                               c.setDate("תאריך: "+dateday+"/"+datemonth);
-                              c.setDestination("יעד: "+destination);
+                              c.setDestination("יעד: "+destination);                          //Get details on the ride
                               c.setStart("נק התחלה: "+start);
                               tempname=(dataSnapshot1.child("name").getValue(String.class));
                               tempnumber=(dataSnapshot1.child("number").getValue(String.class));
                               c.setName("שם: "+tempname);
                               c.setNumber("מספר טלפון: "+tempnumber);
-                              progressBar.setVisibility(View.INVISIBLE);
+                              progressBar.setVisibility(View.INVISIBLE);                       //Add details to the ride's card
                               cards.add(c);
                           }
 

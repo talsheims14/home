@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
-    Button request,suggestion;
+    Button request,suggestion;  // request button , suggestion button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +22,15 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (v==request)
+        if (v==request) //When we click "request"
         {
-            Intent intent= new Intent(this,HomeRequest.class);
+            Intent intent= new Intent(this,HomeRequest.class);//Go to "HOmeRequest"
             startActivity(intent);
             finish();
         }
-        if (v==suggestion)
+        if (v==suggestion)//When we click "suggestion"
         {
-            Intent intent= new Intent(this,HomeSuggestion.class);
+            Intent intent= new Intent(this,HomeSuggestion.class);//Go to "HomeSuggestion"
             startActivity(intent);
             finish();
         }

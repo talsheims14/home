@@ -78,7 +78,8 @@ public class HomeSuggestion extends AppCompatActivity implements View.OnClickLis
             if (tempdestination.isEmpty())
             {
                 destination.setError("היעד ריק");
-                return;
+                return;                                                               //Check if one of the details is empty
+                                                                                      // If it is, The ___ is empty
             }
             if (tempdatemonth.isEmpty())
             {
@@ -94,9 +95,9 @@ public class HomeSuggestion extends AppCompatActivity implements View.OnClickLis
                 start.setError("הנקודת מוצא ריקה");
                 return;
             }
-            if (tempdatemonth.length()<2)
+            if (tempdatemonth.length()<2)               //Check if the date is 2 digits
             {
-                datemonth.setError("צריך להירשם כך: 02,03,04");
+                datemonth.setError("צריך להירשם כך: 02,03,04");//If not,"Sould sign like this:01,02,03"
                 return;
             }
 
@@ -107,9 +108,9 @@ public class HomeSuggestion extends AppCompatActivity implements View.OnClickLis
             startActivity(intent);
             finish();
         }
-        if (v==back)
+        if (v==back)//When we click "back"
         {
-            Intent intent= new Intent(this,Home.class);
+            Intent intent= new Intent(this,Home.class);//Go to "Home"
             startActivity(intent);
             finish();
         }
